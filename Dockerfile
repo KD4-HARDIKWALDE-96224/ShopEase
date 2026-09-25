@@ -10,14 +10,16 @@ RUN mkdir -p src/main/webapp/WEB-INF/classes && \
     -d src/main/webapp/WEB-INF/classes \
     $(find src/main/java -name "*.java") && \
     rm -rf src/main/java
+	FROM tomcat:10.1-jre25-temurin-noble
 
+	RUN rm -rf /usr/local/tomcat/webapps/*
 
-FROM tomcat:10.1-jre25-temurin-noble
+	COPY --from=build /app/src/main/webapp/ /usr/local/tomcat/webapps/ROOT/
 
-RUN rm -rf /usr/local/tomcat/webapps/*
+	RUN sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
 
-COPY --from=build /app/src/main/webapp/ /usr/local/tomcat/webapps/ROOT/
+	ENV PORT=10000
 
-ENV PORT=10000
+	EXPOSE 10000
 
-CMD ["sh", "-c", "sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT}\\\"/\" /usr/local/tomcat/conf/server.xml && exec catalina.sh run"]
+	CMD ["sh", "-c", "sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT}\\\"/\" /usr/local/tomcat/conf/server.xml && exec catalina.sh run"]
