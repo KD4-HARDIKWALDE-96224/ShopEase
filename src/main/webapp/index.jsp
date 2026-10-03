@@ -261,7 +261,6 @@
 
             <div class="hero-float-card hero-float-card-top">
                 <span class="hero-float-icon">✧</span>
-                <span>Something<br>good is here</span>
             </div>
 
             <div class="hero-bag-card">
