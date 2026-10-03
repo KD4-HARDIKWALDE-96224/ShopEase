@@ -252,8 +252,29 @@
         </div>
 
 
-        <div class="hero-product">
-            🛍️
+        <div class="hero-visual" aria-hidden="true">
+
+            <div class="hero-visual-glow"></div>
+
+            <div class="hero-orbit hero-orbit-one">✦</div>
+            <div class="hero-orbit hero-orbit-two">✦</div>
+
+            <div class="hero-float-card hero-float-card-top">
+                <span class="hero-float-icon">✧</span>
+                <span>Something<br>good is here</span>
+            </div>
+
+            <div class="hero-bag-card">
+                <span class="hero-bag-handle"></span>
+                <span class="hero-bag-icon">🛍️</span>
+                <span class="hero-bag-wordmark">SHOP<span>EASE</span></span>
+            </div>
+
+            <div class="hero-float-card hero-float-card-bottom">
+                <span class="hero-float-product">🎧</span>
+                <span>Find your<br>next favorite</span>
+            </div>
+
         </div>
 
     </section>

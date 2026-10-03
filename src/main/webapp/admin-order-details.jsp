@@ -16,6 +16,8 @@
 
     <title>Order Details - ShopEase</title>
 
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+
     <style>
 
         * {
